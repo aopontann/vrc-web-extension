@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "vrc-web-extension",
+  "description": "vrchat.comの拡張機能",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://vrchat.com/home"
+      ],
+      "js": [
+        "index.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "embed.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
+  ]
+}
