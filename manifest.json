@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://vrchat.com/home"
+        "https://vrchat.com/*"
       ],
       "js": [
         "index.js"
@@ -22,5 +22,9 @@
         "https://*/*"
       ]
     }
-  ]
+  ],
+  "action": {
+    "default_title": "Click to view a popup",
+    "default_popup": "popup.html"
+  }
 }

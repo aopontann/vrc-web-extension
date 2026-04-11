@@ -1,6 +1,3 @@
-console.log("embed.js が読み込まれました")
-const webhookURL = ""
-
 const waitForVariable = () => {
     return new Promise((resolve) => {
         const check = () => {
@@ -38,14 +35,21 @@ const job = async (event) => {
     console.log("data:", data)
     console.log("content:", content)
 
-    if (data.type === "friend-online") {
-        const userName = content.user.displayName
-        await send(`${userName} がオンラインになりました`)
+    // 通知設定
+    const url = localStorage.getItem("vrc_web_extension_webhook_url") || ""
+    if (url === "") return
+
+    if (data.type === "notification-v2") {
+        const type = content.type || "type"
+        const title = content.title || "title"
+        const message = content.message || "message"
+        const sendData = `type:${type}\ntitle:${title}\nmessage:${message}`
+        await send(url, sendData)
     }
 }
 
-const send = async (content) => {
-    await fetch(webhookURL, {
+const send = async (url, content) => {
+    await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ content: content }),
