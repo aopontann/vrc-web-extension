@@ -12,22 +12,23 @@
     <title>VRCグループ通知転送</title>
 </head>
 <body>
-<p>グループ通知転送</p>
 
 <label for="webhook-url">webhook URL</label>
-<input type="text" id="webhook-url" name="webhook_url"/>
-<div> </div>
+<input type="text" id="webhook-url" name="webhook_url" disabled/>
 
-<button type="button" id="register-button">
-    登録
+<p id="status">通知転送：loading...</p>
+
+
+<button type="button" id="button" disabled>
+    開始
 </button>
 
 <hr />
-<div>webhookの作成方法は<a href="https://gamewith.jp/discord/458325" target="_blank" rel="noopener">こちら</a></div>
+<div>使い方：<a href="https://github.com/aopontann/vrc-web-extension/blob/master/docs/how-to-use.md" target="_blank" rel="noopener">github</a></div>
 <div>オープンソース：<a href="https://github.com/aopontann/vrc-web-extension" target="_blank" rel="noopener">github</a></div>
 <div>問い合わせ：<a href="https://forms.gle/7JZxZCQ5QjnUSAL99" target="_blank" rel="noopener">Google フォーム</a></div>
 
 
 </body>
-<script src="app.js"></script>
+<script src="popup.js"></script>
 </html>
