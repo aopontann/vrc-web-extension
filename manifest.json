@@ -1,15 +1,18 @@
 {
   "manifest_version": 3,
-  "name": "vrc-web-extension",
-  "description": "vrchat.comの拡張機能",
-  "version": "0.0.1",
+  "name": "VRChat通知転送",
+  "description": "VRChatの通知をDiscordに転送する拡張機能です",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
       "matches": [
         "https://vrchat.com/*"
       ],
       "js": [
-        "index.js"
+        "content_scripts.js"
       ]
     }
   ],
@@ -19,12 +22,13 @@
         "embed.js"
       ],
       "matches": [
-        "https://*/*"
+        "https://vrchat.com/*"
       ]
     }
   ],
   "action": {
-    "default_title": "Click to view a popup",
+    "default_title": "popup",
     "default_popup": "popup.html"
-  }
+  },
+  "permissions": ["activeTab"]
 }
