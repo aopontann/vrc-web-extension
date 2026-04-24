@@ -89,8 +89,7 @@ const messageHandler = async (event) => {
     if (!url) return
 
     if (data.type === "notification-v2") {
-        // content.titleにグループ名が含まれているので、他のプロパティから取得
-        const title = (content.type === "group.announcement" && content.data.announcementTitle) || (content.type === "group.event.created" && content.data.title) || ""
+        const title = content.title
         const message = content.message || ""
         const sendData = `## ${title}\n${message}`
         await send(url, sendData)

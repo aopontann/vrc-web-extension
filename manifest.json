@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "VRChat通知転送",
   "description": "VRChatの通知をDiscordに転送する拡張機能です",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icons": {
     "128": "icons/icon128.png"
   },
